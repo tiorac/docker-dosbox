@@ -10,6 +10,9 @@ LABEL maintainer="tiorac"
 # title
 ENV TITLE=DOSBox
 
+# add local files
+COPY /root /
+
 RUN \
   echo "**** install packages ****" && \
   if [ -z ${DOSBOX_VERSION+x} ]; then \
@@ -19,12 +22,10 @@ RUN \
   apk add --no-cache \
     dosbox==${DOSBOX_VERSION} && \
   sed -i 's|</applications>|  <application title="DOSBox" type="normal">\n    <maximized>yes</maximized>\n  </application>\n</applications>|' /etc/xdg/openbox/rc.xml && \
+  chmod +x /app/startdosbox.sh && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/*
-
-# add local files
-COPY /root /
 
 # ports and volumes
 EXPOSE 3000
