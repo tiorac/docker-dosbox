@@ -1,24 +1,24 @@
 ---
 
 # jenkins variables
-project_name: docker-sqlitebrowser
+project_name: docker-dosbox
 external_type: alpine_repo
 release_type: stable
 release_tag: latest
 ls_branch: master
 build_armhf: false
 repo_vars:
-  - CONTAINER_NAME = 'sqlitebrowser'
+  - CONTAINER_NAME = 'dosbox'
   - BUILD_VERSION_ARG = 'SQLITEB_VERSION'
   - LS_USER = 'linuxserver'
-  - LS_REPO = 'docker-sqlitebrowser'
-  - DOCKERHUB_IMAGE = 'linuxserver/sqlitebrowser'
-  - DEV_DOCKERHUB_IMAGE = 'lsiodev/sqlitebrowser'
-  - PR_DOCKERHUB_IMAGE = 'lspipepr/sqlitebrowser'
+  - LS_REPO = 'docker-dosbox'
+  - DOCKERHUB_IMAGE = 'linuxserver/dosbox'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/dosbox'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/dosbox'
   - DIST_IMAGE = 'alpine'
   - DIST_TAG = '3.18'
   - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.18/community/'
-  - DIST_REPO_PACKAGES = 'sqlitebrowser'
+  - DIST_REPO_PACKAGES = 'dosbox'
   - MULTIARCH='true'
   - CI='true'
   - CI_WEB='true'

@@ -1,10 +1,10 @@
 ---
 
 # project information
-project_name: sqlitebrowser
-project_url: "https://sqlitebrowser.org/"
-project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sqlitebrowser-banner.png"
-project_blurb: "[DB Browser for SQLite]({{ project_url }}) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite."
+project_name: dosbox
+project_url: "https://www.dosbox.com/"
+project_logo: "https://upload.wikimedia.org/wikipedia/commons/d/dd/DOSBox_icon.png"
+project_blurb: "[DOSBox]({{ project_url }}) is a free and open-source emulator which runs software for MS-DOS compatible disk operating systems—primarily video games.[5] It was first released in 2002, when DOS technology was becoming obsolete. Its adoption for running DOS games is widespread, with it being used in commercial re-releases of those games as well."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
 
@@ -27,8 +27,8 @@ param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores program settings and potentially dump files." }
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "3000", internal_port: "3000", port_desc: "Sqlitebrowser desktop gui." }
-  - { external_port: "3001", internal_port: "3001", port_desc: "Sqlitebrowser desktop gui HTTPS." }
+  - { external_port: "3000", internal_port: "3000", port_desc: "DOSBox desktop gui." }
+  - { external_port: "3001", internal_port: "3001", port_desc: "DOSBox desktop gui HTTPS." }
 opt_security_opt_param: true
 opt_security_opt_param_vars:
   - { run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker." }
